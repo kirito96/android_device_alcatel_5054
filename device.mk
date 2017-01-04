@@ -248,3 +248,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hostapd.deny:system/etc/hostapd/hostapd.deny \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+
+# For userdebug builds
+ADDITIONAL_DEFAULT_PROPERTIES += \
+	ro.secure=0 \
+	ro.adb.secure=0 \
+	ro.debuggable=1 \
+	persist.service.adb.enable=1 \
+    security.perf_harden=0
+        
